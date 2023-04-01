@@ -1,0 +1,168 @@
+AWS - provide secure cloud services, database storage, networking,
+
+different types of EC2 instances?
+t2, m2,m4
+
+EC2 :- which provides resizable computing capacity in the cloud
+
+Amazon EBS:- is short for Elastic Block Store. It is a hard-drive like storage solution.
+
+Elastic Beanstalk :- AWS Elastic Beanstalk can be used to quickly deploy
+ and manage applications in the AWS Cloud
+
+Elastic Kubernetes Service :- is a managed service that allows you to run Kubernetes.
+                              without needing to install and operate your own Kubernetes control plane.
+							  
+without keypair how to access ec2 instance?	
+we can create a new keypair and we can update the user data and run some of the
+ ssh commands then
+once we update the public IP of the keypair login into the system.
+
+How you create AMI?
+we need base instance to create image, then based on image we can create AMI.
+
+NAT Gateway and NACL difference?
+NAT gateway provides network to private subnets, its created in a public subnet
+will get internet.
+NACL is the second level of security , subnet level
+
+Internet gateway :- can transfer communications between an vpc and the Internet.
+
+Elastic Container Service(ECS)?
+ECS makes it easy to deploy, manage, and scale Docker containers running applications,
+services, and batch processes
+* all things will be taken care by AWS.
+* No need to run docker commands
+* Using cloud formation stack it is going to deploy all the resouces.
+
+FARGATE :- it is a server less application, (server will be created by AWS they will manage)
+
+Cloud formation :- is an infrastrucsture service
+ Cloud formation Steps
+ 1st we will take some sample template and we will put into the yml,jason formation
+ and edit the parameter if it required and any mapping we will modify 
+ modify the description and we will execute with respective service.
+
+Stacks:- is a collection aws resouces
+
+security group:- virtual firewall for EC2 instances to control incoming and outgoing traffic.
+
+subnets - Subnet is “part of the network”,Creating subnets means dividing a large network into smaller ones,
+
+S3 - simple storage we can store text word pdf files, and aws code we can store.
+The maximum number of S3 buckets that can be created is 100.
+
+standarduj
+
+Amazon S3 Glacier (S3 Glacier) is a secure and durable service for low-cost data archiving and long-term backup.
+ With S3 Glacier,
+
+
+CloudWatch:- monitor AWS environments like EC2, RDS Instances,
+             and CPU utilization. It also triggers alarms depending on various metrics.
+
+VPC -stands for Virtual Private Cloud. It allows you to customize your networking configuration.
+
+18)How do you monitor Amazon VPC?
+CloudWatch
+VPC Flow Logs
+Geo-Targeting in CloudFront
+
+DNS and Load Balancer are a part of IaaS-Storage Cloud Service.
+
+load balancer :- Load balancing is a core networking solution used to distribute,
+                 traffic across multiple servers in a server farm.
+Load balancer types
+Application Load Balancers - provide advanced routing and visibility features targeted at application
+Network Load Balancer when you need ultra-high performance
+
+21)where you kepping code in AWS?
+S3(simple storage)
+
+22) how you copy ec2 to s3?
+Copying files from EC2 to S3 is called Uploading the file.
+Copying files from S3 to EC2 is called Downloading the files.
+*Create an IAM role with S3 write access or admin access
+*Map the IAM role to an EC2 instance
+*Install AWS CLI in EC2 instance
+*Run the AWS s3 cp command to copy the files to the S3 bucket
+
+IAM user :- is an IAM identity that we can create in our AWS account and assign specific permissions.
+
+IAM Roles :- manage who has access to our AWS resources,whereas IAM policies control their permissions.
+
+Groups: An IAM group consists of IAM users and permissions assigned to those users.
+
+Aws region :- is a separate geographic area eg us-east-1
+
+availability zone :- each aws region has multiple isolated locations known as availability zones.
+                     all availability zones inside one region.
+
+auto scaling :- is an amazon service, configure automatic scaling of aws resources.
+                autoscale helps to automatically adjust the capacity as per you need.
+
+geo targetting :- is a concept where you can show personalized content to your audience
+                  based on their geographic location without changing the URL
+ 
+volumes:- physical hard drive
+
+An Amazon EBS volume is a durable, block-level storage device that
+ you can attach to your instances. After you attach a volume to an instance,
+ you can use it as you would use a physical hard drive.
+ 
+snapshot :- Snapshot is backup of AMI
+               is nothing but its a copy of particular gb
+
+sudo xfs_growfs -d /data
+ ebs volume mounting
+ 
+EFS :- we have one volume we have to attach multiple instance then we will go for efs
+
+s3 bucket :- bucket its not region specific
+             its global
+			 but when we r creating bucket we can select region
+			 
+object is stored in the form of key and value
+every object have a url
+
+SRR => SAME REGION REPLICATION
+CRR => CROSS REGION REPLICATION
+
+object store
+we will store logs on the particular application
+
+Blackhole :- NAT Gateway is associated with the routtable if we delete the NAT gateway then the status of the 
+             Routtable will become Blackhole
+			 
+
+
+Metrics:- In metrics select ec2 and serach for cpu utiliszation and select
+
+EBS Volume in Same Region : 
+"To create the volume in the same region different availability zone
+Select the snapshot go to action and create volume from snapshot
+Select the required availability zone and create the volume"
+
+Cloud Map:- "This is intigrates with ECS 
+            Cloud discovery service"
+
+Below are the 10 steps to Create your VPC             (vpc,subnets,internetgateway,routetable, natgateway pub)
+Step 01. Create a VPC 
+
+Step 02. Create 2 Public Subnet & Create 2 Private Subnet         
+
+Step 03. Create IGW (Internet Gateway) & Attach to the VPC
+
+Step 04. Create Public and Private Route Table
+
+Step 05. Add IGW in Public Route table (0.0.0.0/0)
+
+Step 06. Add Public Subnet (1a & 1b) in Route table
+
+Step 07. Create a NAT Gateway in Public Subnet
+
+Step 08. Add NAT GW into the Private Route Table
+
+Step 09. Add Private Subnet in Private Route Table
+
+Step 10. Launch EC2 in this VPC & Validate your Connection
